@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post("/", (req, res, next) => {
   const counter = req.body.counter;
-  const sql = "INSERT INTO counter(counter) values ?";
+  const sql = "INSERT INTO counter(counter) VALUES ?";
   const values = [[counter]];
   db.query(sql, [values], (err, result) => {
     if (err) throw err;
@@ -16,5 +16,8 @@ router.post("/", (req, res, next) => {
 });
 router.get("/", (req, res, next) => {
   res.sendFile(path.join(__dirname, "../", "views", "index.html"));
+});
+router.use("/", (req, res, next) => {
+  res.send("<h1>tidak bisa menambah data</h1>");
 });
 module.exports = router;
