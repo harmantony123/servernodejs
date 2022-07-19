@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const db = require("../config/mysql");
 const router = express.Router();
 
@@ -12,5 +13,8 @@ router.post("/", (req, res, next) => {
       message: "berhasil menambah data counter",
     });
   });
+});
+router.get("/", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "../", "views", "index.html"));
 });
 module.exports = router;
