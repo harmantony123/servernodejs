@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post("/", (req, res, next) => {
   const counter = req.body.counter;
-  const sql = "INSERT INTO counterLatihan(counter) values ?";
+  const sql = "INSERT INTO counter(counter) values ?";
   const values = [[counter]];
   db.query(sql, [values], (err, result) => {
     if (err) throw err;
