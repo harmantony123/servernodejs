@@ -5,11 +5,11 @@ const router = express.Router();
 
 router.post("/", (req, res, next) => {
   const counter = req.body.counter;
-  const sql = "INSERT INTO counter(counter) VALUES ?";
+  const sql = "REPLACE INTO counter(counter) VALUES ?";
   const values = [[counter]];
   db.query(sql, [values], (err, result) => {
     if (err) {
-      console.log("tidak bisa menambah data");
+      console.log("err");
       return;
     }
     res.status(200).json({
