@@ -8,7 +8,10 @@ router.post("/", (req, res, next) => {
   const sql = "INSERT INTO counter(counter) VALUES ?";
   const values = [[counter]];
   db.query(sql, [values], (err, result) => {
-    if (err) throw err;
+    if (err) {
+      console.log("tidak bisa menambah data");
+      return;
+    }
     res.status(200).json({
       message: "berhasil menambah data counter",
     });
