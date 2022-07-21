@@ -8,7 +8,7 @@ const con = mysql.createConnection({
 
   host: "sql.freedb.tech",
   user: "freedb_harmanelins",
-  password: "sz35$pQWM@$4kG",
+  password: "sz35$pQWM@$s4kG",
   database: "freedb_dbuser",
 });
 con.connect((err) => {
