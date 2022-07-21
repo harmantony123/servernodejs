@@ -6,10 +6,10 @@ const con = mysql.createConnection({
   // password: "albertenstein",
   // database: "kuliah",
 
-  host: "35.188.70.158",
-  user: "root",
-  password: "1234",
-  database: "UAS_takad",
+  host: "sql.freedb.tech",
+  user: "freedb_harmanelins",
+  password: "sz35$pQWM@$4kG",
+  database: "freedb_dbuser",
 });
 con.connect((err) => {
   if (err) throw err;
